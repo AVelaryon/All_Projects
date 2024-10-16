@@ -1,3 +1,3 @@
-# GAN-and-MCMC-Implementation
+# All Python Scripts
 This repository is a consolidation of python implementations of statistical techniques/methodologies either self-taught or otherwise, to further education beyond graduate school.
 **NOTE:** Nearly all of the classes and/or functions in this repository are correct and are programmatic transcriptions of well-established mathematical formulations and concepts. Nevertheless, there likely are functions/classes that aren't correct or aren't "up-to-standard", meaning they lack a desired degree of precision and/or accuracy, a consequence of misunderstanding, or weren't fully implemented.
