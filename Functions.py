@@ -50,7 +50,7 @@ class SimpRule:
     """
     def __init__(self, f, bounds, error):
         self.f = f
-        self.b = bounds
+        self.bounds = bounds
         if len(self.b) != 2:
             print('Your input has too many elements for a bound. There should only be 2.')
         else:
@@ -68,14 +68,15 @@ class SimpRule:
         
         while errl >self.err:
             #Step Size 
-            h = (max(self.b)-min(self.b))/n
-            sum1, sum2 = 0,0
+            h = (max(self.bounds)-min(self.bounds))/n
+            sum1 = 0
             for i in range(1,n,2):
-                sum1 += 4*self.f(min(self.b)+ i*h)
-            for i in range(2, n-1,2):
-                sum2 += 2*self.f(min(self.b) + i*h)
+                mult = 4 if i%2 else 2
+                sum1 += mult*self.f(min(self.b)+ i*h)
+            # for i in range(2, n-1,2):
+            #     sum2 += 2*self.f(min(self.bounds) + i*h)
                 
-            integral = (h/3)*(self.f(min(self.b)) + sum1 + sum2 + self.f(max(self.b)))
+            integral = (h/3)*(self.f(min(self.bounds)) + sum1 + self.f(max(self.b)))
             errl = np.abs((integral -old)/integral) 
             print(f'{ii} \t\t {errl:.6f} \t\t {integral:.6f}')
             old = integral
