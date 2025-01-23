@@ -22,7 +22,6 @@ class NaiveBayes:
 
     def estimate_density(self, data):
         # Use a non-Gaussian density estimation method (e.g., kernel density estimation)
-        # Here, we use a simple histogram-based estimation for demonstration purposes.
         hist, bin_edges = np.histogram(data, bins=10, density=True)
         density = np.zeros(len(data))
         bin_centers = (bin_edges[:-1] + bin_edges[1:]) / 2
